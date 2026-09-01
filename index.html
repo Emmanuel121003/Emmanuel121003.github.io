@@ -155,6 +155,15 @@
     transition:border-color .2s,color .2s,transform .2s;
   }
   .theme-btn:hover{border-color:var(--border-strong);color:var(--accent);transform:translateY(-1px)}
+  .lang-btn{
+    height:38px;padding:0 .6rem;border-radius:9px;border:1px solid var(--border);
+    background:var(--surface);color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;
+    font-family:"IBM Plex Mono";font-size:.78rem;font-weight:600;letter-spacing:.02em;
+    transition:border-color .2s,color .2s,transform .2s;
+  }
+  .lang-btn:hover{border-color:var(--border-strong);color:var(--accent);transform:translateY(-1px)}
+  .lang-btn svg{width:16px;height:16px}
+  .lang-code{line-height:1}
   .theme-btn svg{width:18px;height:18px}
   .theme-btn .moon{display:none}
   :root[data-theme="dark"] .theme-btn .sun{display:none}
@@ -476,14 +485,18 @@
       <span class="mark">EN</span> Emmanuel&nbsp;Narro
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-      <a href="#sobre-mi">sobre mí</a>
-      <a href="#stack">stack</a>
-      <a href="#proyectos">proyectos</a>
-      <a href="#colaboracion">colaboración</a>
-      <a href="#experiencia">experiencia</a>
-      <a href="#contacto">contacto</a>
+      <a href="#sobre-mi" data-i18n="nav.about">sobre mí</a>
+      <a href="#stack" data-i18n="nav.stack">stack</a>
+      <a href="#proyectos" data-i18n="nav.projects">proyectos</a>
+      <a href="#colaboracion" data-i18n="nav.collab">colaboración</a>
+      <a href="#experiencia" data-i18n="nav.exp">experiencia</a>
+      <a href="#contacto" data-i18n="nav.contact">contacto</a>
     </nav>
     <div style="display:flex;gap:.5rem">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Switch to English" title="English">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        <span class="lang-code" id="langCode">EN</span>
+      </button>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar tema claro / oscuro">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -499,18 +512,18 @@
 <!-- ================= HERO ================= -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-inner">
-    <span class="status"><span class="dot"></span> Disponible · Guadalajara, Jalisco (presencial / híbrido)</span>
-    <h1 id="hero-title">Desarrollo y mantengo <span class="accent">sistemas</span> que operan en producción.</h1>
-    <p class="role-line">Desarrollador de Software Jr. · .NET/C# · Python · SQL Server<span class="cursor">.</span></p>
-    <p class="lead">Ingeniero en Desarrollo y Gestión de Software con experiencia profesional construyendo y dando soporte a <b>sistemas empresariales en operación</b>. Trabajo backend con <b>.NET/C# y Python</b>, integraciones por <b>APIs REST</b>, y administración de <b>SQL Server</b> —desde el desarrollo hasta el despliegue en sitio y la resolución de incidencias.</p>
+    <span class="status" data-i18n="hero.status" data-i18n-html><span class="dot"></span> Disponible · Guadalajara, Jalisco (presencial / híbrido)</span>
+    <h1 id="hero-title" data-i18n="hero.h1" data-i18n-html>Desarrollo y mantengo <span class="accent">sistemas</span> que operan en producción.</h1>
+    <p class="role-line" data-i18n="hero.role" data-i18n-html>Desarrollador de Software Jr. · .NET/C# · Python · SQL Server<span class="cursor">.</span></p>
+    <p class="lead" data-i18n="hero.lead" data-i18n-html>Ingeniero en Desarrollo y Gestión de Software con experiencia profesional construyendo y dando soporte a <b>sistemas empresariales en operación</b>. Trabajo backend con <b>.NET/C# y Python</b>, integraciones por <b>APIs REST</b>, y administración de <b>SQL Server</b> —desde el desarrollo hasta el despliegue en sitio y la resolución de incidencias.</p>
     <div class="cta-row">
       <a href="#proyectos" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-        Ver proyectos
+        <span data-i18n="hero.btnProjects">Ver proyectos</span>
       </a>
       <a href="#contacto" class="btn btn-ghost">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
-        Contactarme
+        <span data-i18n="hero.btnContact">Contactarme</span>
       </a>
     </div>
     <div class="hero-social">
@@ -531,10 +544,10 @@
 
   <div class="wrap">
     <div class="metrics reveal" aria-label="Métricas resumen">
-      <div class="metric"><div class="num">E-GO · VirtuaMX</div><div class="lbl">// experiencia real</div></div>
-      <div class="metric"><div class="num">Scale&nbsp;II</div><div class="lbl">// sistema en producción</div></div>
-      <div class="metric"><div class="num">.NET · Python · SQL</div><div class="lbl">// stack principal</div></div>
-      <div class="metric"><div class="num">Ing. Software</div><div class="lbl">// UT Rodeo · 2026</div></div>
+      <div class="metric"><div class="num">E-GO · VirtuaMX</div><div class="lbl" data-i18n="metric.exp">// experiencia real</div></div>
+      <div class="metric"><div class="num">Scale&nbsp;II</div><div class="lbl" data-i18n="metric.prod">// sistema en producción</div></div>
+      <div class="metric"><div class="num">.NET · Python · SQL</div><div class="lbl" data-i18n="metric.stack">// stack principal</div></div>
+      <div class="metric"><div class="num" data-i18n="metric.degree">Ing. Software</div><div class="lbl">// UT Rodeo · 2026</div></div>
     </div>
   </div>
 </section>
@@ -544,37 +557,37 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-body reveal">
-        <span class="eyebrow mono">// sobre-mí</span>
-        <h2 id="about-title" style="font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:1.4rem">Un desarrollador que lleva los sistemas del código a la operación real.</h2>
-        <p>Soy <b>Ingeniero en Desarrollo y Gestión de Software</b> con experiencia profesional en <strong class="hl">desarrollo backend y soporte de sistemas en producción</strong>. En mi trabajo actual desarrollo y mantengo un sistema de control de peso industrial usado diariamente en piso de operación, con <b>.NET/C#, Python y SQL Server</b>.</p>
-        <p>Trabajo <b>en equipo</b> (metodología Scrum, Git y GitHub) sobre varios productos: fui el <b>principal contribuidor de la app Android</b> del sistema de básculas y aporté también al núcleo en .NET/C#, además de colaborar en un punto de venta empresarial (C#, Vue.js, Node.js). He cubierto el ciclo completo: análisis, desarrollo, <b>APIs REST</b>, optimización de consultas SQL y la parte que muchos evitan —<b>instalar, desplegar y sostener el sistema en sitio</b>.</p>
-        <p>Por mi cuenta, mi GitHub reúne <b>proyectos propios</b> que refuerzan mi base full stack: un sistema de expedientes médicos en <b>.NET/C# y SQL Server</b>, sistemas en PHP/MySQL (asistencia, punto de venta, gestión MVC), una app en Flask y desarrollo móvil con React Native. Me interesa además la <b>seguridad de la información</b> (fundamentos de ciberseguridad e ISO 27001). Busco un rol <b>Junior de Full Stack, Backend o Software Developer</b> donde aportar y seguir creciendo.</p>
+        <span class="eyebrow mono" data-i18n="about.eyebrow">// sobre-mí</span>
+        <h2 id="about-title" style="font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:1.4rem" data-i18n="about.title">Un desarrollador que lleva los sistemas del código a la operación real.</h2>
+        <p data-i18n="about.p1" data-i18n-html>Soy <b>Ingeniero en Desarrollo y Gestión de Software</b> con experiencia profesional en <strong class="hl">desarrollo backend y soporte de sistemas en producción</strong>. En mi trabajo actual desarrollo y mantengo un sistema de control de peso industrial usado diariamente en piso de operación, con <b>.NET/C#, Python y SQL Server</b>.</p>
+        <p data-i18n="about.p2" data-i18n-html>Trabajo <b>en equipo</b> (metodología Scrum, Git y GitHub) sobre varios productos: fui el <b>principal contribuidor de la app Android</b> del sistema de básculas y aporté también al núcleo en .NET/C#, además de colaborar en un punto de venta empresarial (C#, Vue.js, Node.js). He cubierto el ciclo completo: análisis, desarrollo, <b>APIs REST</b>, optimización de consultas SQL y la parte que muchos evitan —<b>instalar, desplegar y sostener el sistema en sitio</b>.</p>
+        <p data-i18n="about.p3" data-i18n-html>Por mi cuenta, mi GitHub reúne <b>proyectos propios</b> que refuerzan mi base full stack: un sistema de expedientes médicos en <b>.NET/C# y SQL Server</b>, sistemas en PHP/MySQL (asistencia, punto de venta, gestión MVC), una app en Flask y desarrollo móvil con React Native. Me interesa además la <b>seguridad de la información</b> (fundamentos de ciberseguridad e ISO 27001). Busco un rol <b>Junior de Full Stack, Backend o Software Developer</b> donde aportar y seguir creciendo.</p>
       </div>
       <aside class="about-card reveal" data-d="1" aria-label="Datos rápidos">
-        <h3 class="mono">// perfil.json</h3>
+        <h3 class="mono" data-i18n="about.card">// perfil.json</h3>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7l-8-4-8 4 8 4 8-4zM4 7v10l8 4 8-4V7"/></svg>
-          <div><div class="k mono">enfoque</div><div class="v">Backend · Soporte de sistemas</div></div>
+          <div><div class="k mono" data-i18n="fact.focusK">enfoque</div><div class="v" data-i18n="fact.focusV">Backend · Soporte de sistemas</div></div>
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
-          <div><div class="k mono">lenguajes</div><div class="v">C# / .NET · Python · JS/TS · PHP · Java</div></div>
+          <div><div class="k mono" data-i18n="fact.langK">lenguajes</div><div class="v">C# / .NET · Python · JS/TS · PHP · Java</div></div>
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>
-          <div><div class="k mono">bases de datos</div><div class="v">SQL Server · MySQL · MongoDB</div></div>
+          <div><div class="k mono" data-i18n="fact.dbK">bases de datos</div><div class="v">SQL Server · MySQL · MongoDB</div></div>
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M3 20h4M12 4v16M4 8h4l2-4h4"/><circle cx="6" cy="8" r="2"/></svg>
-          <div><div class="k mono">educación</div><div class="v">Ing. Desarrollo y Gestión de SW</div></div>
+          <div><div class="k mono" data-i18n="fact.eduK">educación</div><div class="v" data-i18n="fact.eduV">Ing. Desarrollo y Gestión de SW</div></div>
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
-          <div><div class="k mono">idiomas</div><div class="v">Español (nativo) · Inglés B2</div></div>
+          <div><div class="k mono" data-i18n="fact.spokenK">idiomas</div><div class="v" data-i18n="fact.spokenV">Español (nativo) · Inglés B2</div></div>
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><div class="k mono">ubicación</div><div class="v">Guadalajara, Jalisco</div></div>
+          <div><div class="k mono" data-i18n="fact.locK">ubicación</div><div class="v">Guadalajara, Jalisco</div></div>
         </div>
       </aside>
     </div>
@@ -588,8 +601,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow mono">// stack</span>
-      <h2 id="stack-title">Tecnologías que puedo respaldar</h2>
-      <p>Herramientas que uso en mi trabajo profesional y en mis proyectos, validadas también en mi perfil de LinkedIn. Las marcadas <span style="color:var(--accent)">en color</span> son las que más domino.</p>
+      <h2 id="stack-title" data-i18n="stack.title">Tecnologías que puedo respaldar</h2>
+      <p data-i18n="stack.desc" data-i18n-html>Herramientas que uso en mi trabajo profesional y en mis proyectos, validadas también en mi perfil de LinkedIn. Las marcadas <span style="color:var(--accent)">en color</span> son las que más domino.</p>
     </div>
     <div class="stack-grid">
       <div class="stack-cat reveal">
@@ -617,11 +630,11 @@
           <span class="chip">React</span>
           <span class="chip">Vue.js</span>
           <span class="chip">Tailwind</span>
-          <span class="chip">Diseño UX/UI</span>
+          <span class="chip" data-i18n="chip.uxui">Diseño UX/UI</span>
         </div>
       </div>
       <div class="stack-cat reveal" data-d="2">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>Bases de datos</h3>
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span><span data-i18n="stack.cat.db">Bases de datos</span></h3>
         <div class="chips">
           <span class="chip core">SQL Server</span>
           <span class="chip core">MySQL</span>
@@ -629,7 +642,7 @@
           <span class="chip">MongoDB</span>
           <span class="chip">SQLite</span>
           <span class="chip">Firebase</span>
-          <span class="chip">Diseño de BD / Respaldos</span>
+          <span class="chip" data-i18n="chip.dbdesign">Diseño de BD / Respaldos</span>
         </div>
       </div>
       <div class="stack-cat reveal">
@@ -642,7 +655,7 @@
         </div>
       </div>
       <div class="stack-cat reveal" data-d="1">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9c0 6-12 3-12 6"/></svg></span>Sistemas · DevOps</h3>
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9c0 6-12 3-12 6"/></svg></span><span data-i18n="stack.cat.sys">Sistemas · DevOps</span></h3>
         <div class="chips">
           <span class="chip core">Git</span>
           <span class="chip core">GitHub</span>
@@ -654,13 +667,13 @@
         </div>
       </div>
       <div class="stack-cat reveal" data-d="2">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Seguridad · Otros</h3>
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span data-i18n="stack.cat.sec">Seguridad · Otros</span></h3>
         <div class="chips">
           <span class="chip">Ciberseguridad</span>
           <span class="chip">ISO 27001 / SGSI</span>
           <span class="chip">IoT · Arduino / ESP8266</span>
           <span class="chip">Google Vertex AI</span>
-          <span class="chip">Reportes Excel / PDF</span>
+          <span class="chip" data-i18n="chip.reports">Reportes Excel / PDF</span>
         </div>
       </div>
     </div>
@@ -671,9 +684,9 @@
 <section id="proyectos" aria-labelledby="proj-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow mono">// proyectos · propios</span>
-      <h2 id="proj-title">Mis proyectos</h2>
-      <p>Proyectos que he desarrollado por mi cuenta —de mi autoría—, disponibles en mi GitHub. Los proyectos de empresa y de equipo están en la sección de <a href="#colaboracion" style="color:var(--accent)">Colaboración</a>.</p>
+      <span class="eyebrow mono" data-i18n="proj.eyebrow">// proyectos · propios</span>
+      <h2 id="proj-title" data-i18n="proj.title">Mis proyectos</h2>
+      <p data-i18n="proj.desc" data-i18n-html>Proyectos que he desarrollado por mi cuenta —de mi autoría—, disponibles en mi GitHub. Los proyectos de empresa y de equipo están en la sección de <a href="#colaboracion" style="color:var(--accent)">Colaboración</a>.</p>
     </div>
 
     <div class="proj-grid">
@@ -683,23 +696,23 @@
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
           <span class="proj-kind mono">Web · Full Stack</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> alta</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> <span data-i18n="cx.high">alta</span></span>
         </div>
         <div class="proj-body">
-          <h3>Sistema de Asistencia</h3>
-          <p class="proj-desc">Plataforma para registrar y controlar la asistencia de alumnos por parte de administradores y maestros, con reportes exportables.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="p.asis.t">Sistema de Asistencia</h3>
+          <p class="proj-desc" data-i18n="p.asis.d">Plataforma para registrar y controlar la asistencia de alumnos por parte de administradores y maestros, con reportes exportables.</p>
+          <ul class="proj-feats" data-i18n="p.asis.f" data-i18n-html>
             <li>Registro de asistencia por <b>código QR y huella</b></li>
             <li>Roles diferenciados: administrador y maestro</li>
             <li>Modelo relacional: usuarios, grupos, materias, horarios</li>
             <li>Exportación de reportes semanales</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Desarrollo full stack: diseño del esquema de base de datos, autenticación por roles, lógica de registro y módulos de exportación.</div>
+          <div class="proj-role" data-i18n="p.asis.r" data-i18n-html><b>// mi participación</b>Desarrollo full stack: diseño del esquema de base de datos, autenticación por roles, lógica de registro y módulos de exportación.</div>
           <div class="proj-tech"><span class="chip">PHP</span><span class="chip">MySQL / MariaDB</span><span class="chip">CSS</span><span class="chip">QR</span></div>
           <div class="proj-foot">
             <a class="proj-link" href="https://github.com/Emmanuel121003/Asistencia" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-              Código
+              <span data-i18n="lbl.code">Código</span>
             </a>
           </div>
         </div>
@@ -710,23 +723,23 @@
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h2l2.4 12.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></div>
           <span class="proj-kind mono">Web · Backend</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> alta</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> <span data-i18n="cx.high">alta</span></span>
         </div>
         <div class="proj-body">
-          <h3>Sistema POS (Punto de Venta)</h3>
-          <p class="proj-desc">Sistema de punto de venta para gestionar inventario, pedidos y ventas de un comercio, con operaciones en tiempo real vía AJAX.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="p.pos.t">Sistema POS (Punto de Venta)</h3>
+          <p class="proj-desc" data-i18n="p.pos.d">Sistema de punto de venta para gestionar inventario, pedidos y ventas de un comercio, con operaciones en tiempo real vía AJAX.</p>
+          <ul class="proj-feats" data-i18n="p.pos.f" data-i18n-html>
             <li>Gestión de inventario y productos</li>
             <li>Procesamiento de pedidos y ventas</li>
             <li>Administración de usuarios y estados</li>
             <li>Acciones asíncronas (AJAX) sobre el servidor</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Backend en PHP: lógica de negocio de ventas/inventario, endpoints de acciones y estructura del proyecto (actions/config/includes).</div>
+          <div class="proj-role" data-i18n="p.pos.r" data-i18n-html><b>// mi participación</b>Backend en PHP: lógica de negocio de ventas/inventario, endpoints de acciones y estructura del proyecto (actions/config/includes).</div>
           <div class="proj-tech"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">AJAX</span><span class="chip">CSS</span></div>
           <div class="proj-foot">
             <a class="proj-link" href="https://github.com/Emmanuel121003/SistemaPOS" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-              Código
+              <span data-i18n="lbl.code">Código</span>
             </a>
           </div>
         </div>
@@ -737,23 +750,23 @@
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
           <span class="proj-kind mono">Web · MVC</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> alta</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> <span data-i18n="cx.high">alta</span></span>
         </div>
         <div class="proj-body">
-          <h3>Sistema de Gestión (MVC)</h3>
-          <p class="proj-desc">Aplicación de gestión de pedidos y productos organizada bajo el patrón <b>Modelo-Vista-Controlador</b>, con capa de datos separada y operaciones por AJAX.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="p.mvc.t">Sistema de Gestión (MVC)</h3>
+          <p class="proj-desc" data-i18n="p.mvc.d" data-i18n-html>Aplicación de gestión de pedidos y productos organizada bajo el patrón <b>Modelo-Vista-Controlador</b>, con capa de datos separada y operaciones por AJAX.</p>
+          <ul class="proj-feats" data-i18n="p.mvc.f" data-i18n-html>
             <li>Separación clara: modelos, vistas y controladores</li>
             <li>Capa de conexión a base de datos reutilizable</li>
             <li>CRUD de usuarios, pedidos y productos</li>
             <li>Interfaz dinámica con peticiones AJAX</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Estructuración del proyecto en MVC, capa de acceso a datos (Conexión), modelos de dominio y controladores AJAX.</div>
+          <div class="proj-role" data-i18n="p.mvc.r" data-i18n-html><b>// mi participación</b>Estructuración del proyecto en MVC, capa de acceso a datos (Conexión), modelos de dominio y controladores AJAX.</div>
           <div class="proj-tech"><span class="chip">PHP</span><span class="chip">MVC</span><span class="chip">JavaScript</span><span class="chip">MySQL</span></div>
           <div class="proj-foot">
             <a class="proj-link" href="https://github.com/Emmanuel121003/proyectosistem" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-              Código
+              <span data-i18n="lbl.code">Código</span>
             </a>
           </div>
         </div>
@@ -764,23 +777,23 @@
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h4l2 3h6l2-3h4M5 8v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8"/><path d="M9 19v2M15 19v2"/></svg></div>
           <span class="proj-kind mono">Web · Python</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span> media</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span> <span data-i18n="cx.med">media</span></span>
         </div>
         <div class="proj-body">
-          <h3>Sistema Ganadero Interactivo</h3>
-          <p class="proj-desc">Aplicación web en <b>Flask</b> para el registro y control de ganado: entradas, salidas, pesos y aretes, con generación de reportes.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="p.gan.t">Sistema Ganadero Interactivo</h3>
+          <p class="proj-desc" data-i18n="p.gan.d" data-i18n-html>Aplicación web en <b>Flask</b> para el registro y control de ganado: entradas, salidas, pesos y aretes, con generación de reportes.</p>
+          <ul class="proj-feats" data-i18n="p.gan.f" data-i18n-html>
             <li>Registro de entradas/salidas de animales</li>
             <li>Control de pesos y aretes (frontal/trasero)</li>
             <li>Exportación de reportes a <b>Excel y PDF</b></li>
             <li>Persistencia con base de datos SQLite</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Desarrollo completo en Python/Flask: rutas, consultas SQL, plantillas y generación de reportes con openpyxl y ReportLab.</div>
+          <div class="proj-role" data-i18n="p.gan.r" data-i18n-html><b>// mi participación</b>Desarrollo completo en Python/Flask: rutas, consultas SQL, plantillas y generación de reportes con openpyxl y ReportLab.</div>
           <div class="proj-tech"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">ReportLab</span></div>
           <div class="proj-foot">
             <a class="proj-link" href="https://github.com/Emmanuel121003/Sistema_Ganado_Interactivo" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-              Código
+              <span data-i18n="lbl.code">Código</span>
             </a>
           </div>
         </div>
@@ -790,24 +803,24 @@
       <article class="proj reveal">
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M3 12h18"/></svg></div>
-          <span class="proj-kind mono">Móvil · React Native</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span> media</span>
+          <span class="proj-kind mono" data-i18n="k.mobileRN">Móvil · React Native</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span> <span data-i18n="cx.med">media</span></span>
         </div>
         <div class="proj-body">
-          <h3>Scanner-QR · App móvil</h3>
-          <p class="proj-desc">Aplicación móvil multiplataforma para escanear códigos QR con la cámara, guardar el historial y copiar resultados.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="p.qr.t">Scanner-QR · App móvil</h3>
+          <p class="proj-desc" data-i18n="p.qr.d">Aplicación móvil multiplataforma para escanear códigos QR con la cámara, guardar el historial y copiar resultados.</p>
+          <ul class="proj-feats" data-i18n="p.qr.f" data-i18n-html>
             <li>Escaneo con la cámara (expo-camera)</li>
             <li>Historial persistente con AsyncStorage</li>
             <li>Navegación entre pantallas (stack)</li>
             <li>Configuración lista para build con EAS</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Desarrollo móvil completo: pantallas (escáner, historial, ajustes), navegación, almacenamiento local y configuración de compilación.</div>
+          <div class="proj-role" data-i18n="p.qr.r" data-i18n-html><b>// mi participación</b>Desarrollo móvil completo: pantallas (escáner, historial, ajustes), navegación, almacenamiento local y configuración de compilación.</div>
           <div class="proj-tech"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">JavaScript</span><span class="chip">AsyncStorage</span></div>
           <div class="proj-foot">
             <a class="proj-link" href="https://github.com/Emmanuel121003/Scanner-QR" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-              Código
+              <span data-i18n="lbl.code">Código</span>
             </a>
           </div>
         </div>
@@ -817,24 +830,24 @@
       <article class="proj reveal" data-d="1">
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="18" rx="2"/><path d="M9 4V2h6v2M12 9v6M9 12h6"/></svg></div>
-          <span class="proj-kind mono">Escritorio · .NET / C#</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> alta</span>
+          <span class="proj-kind mono" data-i18n="k.desktopNet">Escritorio · .NET / C#</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> <span data-i18n="cx.high">alta</span></span>
         </div>
         <div class="proj-body">
-          <h3>MedicalRecords <span class="tag" style="margin-left:.3rem">Privado</span></h3>
-          <p class="proj-desc">Sistema de expedientes médicos desarrollado en <b>.NET/C#</b> con SQL Server, estructurado como una solución profesional con capas, pruebas y documentación.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="p.med.t" data-i18n-html>MedicalRecords <span class="tag" style="margin-left:.3rem">Privado</span></h3>
+          <p class="proj-desc" data-i18n="p.med.d" data-i18n-html>Sistema de expedientes médicos desarrollado en <b>.NET/C#</b> con SQL Server, estructurado como una solución profesional con capas, pruebas y documentación.</p>
+          <ul class="proj-feats" data-i18n="p.med.f" data-i18n-html>
             <li>Backend en C# / .NET (solución multi-proyecto)</li>
             <li>Base de datos SQL Server con scripts T-SQL</li>
             <li>Pruebas automatizadas y documentación técnica</li>
             <li>Scripts de automatización (PowerShell)</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Autor único del proyecto: diseño de la solución .NET, modelo de datos en SQL Server, pruebas y documentación (26 commits).</div>
+          <div class="proj-role" data-i18n="p.med.r" data-i18n-html><b>// mi participación</b>Autor único del proyecto: diseño de la solución .NET, modelo de datos en SQL Server, pruebas y documentación (26 commits).</div>
           <div class="proj-tech"><span class="chip">C# / .NET</span><span class="chip">SQL Server</span><span class="chip">T-SQL</span><span class="chip">Pruebas</span></div>
           <div class="proj-foot">
             <span class="proj-link" style="cursor:default" aria-label="Repositorio privado">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              Repositorio privado
+              <span data-i18n="lbl.privateRepo">Repositorio privado</span>
             </span>
           </div>
         </div>
@@ -850,9 +863,9 @@
 <section id="colaboracion" aria-labelledby="collab-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow mono">// colaboración · equipo</span>
-      <h2 id="collab-title">Proyectos en los que he colaborado</h2>
-      <p>Trabajo en equipo en <b>E-GO Desarrollo de Software</b> y en un hackathon. Los sistemas empresariales son privados: se describen de forma general, sin exponer código ni información confidencial. Mi participación se indica según mis contribuciones reales (commits).</p>
+      <span class="eyebrow mono" data-i18n="collab.eyebrow">// colaboración · equipo</span>
+      <h2 id="collab-title" data-i18n="collab.title">Proyectos en los que he colaborado</h2>
+      <p data-i18n="collab.desc" data-i18n-html>Trabajo en equipo en <b>E-GO Desarrollo de Software</b> y en un hackathon. Los sistemas empresariales son privados: se describen de forma general, sin exponer código ni información confidencial. Mi participación se indica según mis contribuciones reales (commits).</p>
     </div>
 
     <!-- Scale II (professional, verified) -->
@@ -861,15 +874,15 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M5 6h14l-2 5H7L5 6zM3 21h18M8 21l1-5M16 21l-1-5"/><circle cx="12" cy="6" r="1"/></svg>
       </div>
       <div class="band-content">
-        <h3>Scale II — Control de Peso Industrial <span class="tag pro">Empresa · E-GO</span> <span class="tag">En producción</span></h3>
-        <p>Sistema empresarial para el control de peso en básculas industriales, en uso diario en piso de operación. Integra una <b>aplicación de escritorio (.NET/C#)</b>, una <b>app móvil Android</b> de captura en campo y <b>hardware con Raspberry Pi</b>, comunicados en tiempo real y respaldados en SQL Server.</p>
-        <ul class="contrib-list">
+        <h3 data-i18n="c.scale.t" data-i18n-html>Scale II — Control de Peso Industrial <span class="tag pro">Empresa · E-GO</span> <span class="tag">En producción</span></h3>
+        <p data-i18n="c.scale.d" data-i18n-html>Sistema empresarial para el control de peso en básculas industriales, en uso diario en piso de operación. Integra una <b>aplicación de escritorio (.NET/C#)</b>, una <b>app móvil Android</b> de captura en campo y <b>hardware con Raspberry Pi</b>, comunicados en tiempo real y respaldados en SQL Server.</p>
+        <ul class="contrib-list" data-i18n="c.scale.f" data-i18n-html>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>App Android de captura en planta (Java)</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Aplicación de escritorio / servicio en .NET/C#</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Comunicación en tiempo real con hardware de báscula</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sincronización y respaldo en SQL Server</li>
         </ul>
-        <div class="proj-role" style="margin-top:1.2rem;max-width:46rem"><b>// mi participación</b><b>Principal contribuidor de la app Android</b> (42 commits, el que más aportó) y <b>contribuidor del núcleo de escritorio/servicio en .NET/C#</b> (16 commits). Trabajo bajo Scrum en un equipo de varios desarrolladores, con despliegue en sitio y resolución de incidencias.</div>
+        <div class="proj-role" style="margin-top:1.2rem;max-width:46rem" data-i18n="c.scale.r" data-i18n-html><b>// mi participación</b><b>Principal contribuidor de la app Android</b> (42 commits, el que más aportó) y <b>contribuidor del núcleo de escritorio/servicio en .NET/C#</b> (16 commits). Trabajo bajo Scrum en un equipo de varios desarrolladores, con despliegue en sitio y resolución de incidencias.</div>
         <div class="band-tech">
           <span class="chip">Java / Android</span><span class="chip">.NET / C#</span><span class="chip">SQL Server</span><span class="chip">Raspberry Pi</span><span class="chip">Python</span><span class="chip">APIs REST</span>
         </div>
@@ -882,15 +895,15 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/><circle cx="17" cy="18" r="1"/></svg>
       </div>
       <div class="band-content">
-        <h3>Gens — Punto de Venta <span class="tag team">Empresa · E-GO</span> <span class="tag">En producción</span></h3>
+        <h3 data-i18n="c.genspos.t" data-i18n-html>Gens — Punto de Venta <span class="tag team">Empresa · E-GO</span> <span class="tag">En producción</span></h3>
         <p>Sistema de punto de venta para comercios, desarrollado en equipo. El núcleo es una aplicación de escritorio en <b>C#/.NET</b> con biblioteca de clases y servidor, respaldada por <b>SQL Server</b>. Es la parte de escritorio del ecosistema Gens (su plataforma web se muestra aparte).</p>
-        <ul class="contrib-list">
+        <ul class="contrib-list" data-i18n="c.genspos.f" data-i18n-html>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Aplicación de punto de venta en C#/.NET</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Servidor y biblioteca de clases + SQL Server</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Gestión de ventas, inventario y usuarios</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Trabajo colaborativo en un equipo de ~8 desarrolladores</li>
         </ul>
-        <div class="proj-role" style="margin-top:1.2rem;max-width:46rem"><b>// mi participación</b>Contribuidor del sistema de punto de venta en C#/.NET (44 commits), con aportes adicionales en el backoffice (Vue.js) y el servicio web (Node.js).</div>
+        <div class="proj-role" style="margin-top:1.2rem;max-width:46rem" data-i18n="c.genspos.r" data-i18n-html><b>// mi participación</b>Contribuidor del sistema de punto de venta en C#/.NET (44 commits), con aportes adicionales en el backoffice (Vue.js) y el servicio web (Node.js).</div>
         <div class="band-tech">
           <span class="chip">C# / .NET</span><span class="chip">SQL Server</span><span class="chip">Vue.js</span><span class="chip">Node.js</span><span class="chip">Laravel</span>
         </div>
@@ -903,24 +916,24 @@
       <article class="proj reveal">
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v14H3zM3 8h18M8 21h8M12 17v4"/><circle cx="7" cy="5.5" r=".6"/></svg></div>
-          <span class="proj-kind mono">Web · E-commerce · Equipo</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> alta</span>
+          <span class="proj-kind mono" data-i18n="k.webEcomTeam">Web · E-commerce · Equipo</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> <span data-i18n="cx.high">alta</span></span>
         </div>
         <div class="proj-body">
-          <h3>Gens — Plataforma web <span class="tag team" style="margin-left:.3rem">Empresa · E-GO</span> <span class="tag" style="margin-left:.3rem">En producción</span></h3>
-          <p class="proj-desc">Plataforma <b>e-commerce</b> de Gens: un catálogo web público, un panel de administración (backoffice) y un servicio web que lo alimenta, integrados con la base de datos del negocio.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="c.gensweb.t" data-i18n-html>Gens — Plataforma web <span class="tag team" style="margin-left:.3rem">Empresa · E-GO</span> <span class="tag" style="margin-left:.3rem">En producción</span></h3>
+          <p class="proj-desc" data-i18n="c.gensweb.d" data-i18n-html>Plataforma <b>e-commerce</b> de Gens: un catálogo web público, un panel de administración (backoffice) y un servicio web que lo alimenta, integrados con la base de datos del negocio.</p>
+          <ul class="proj-feats" data-i18n="c.gensweb.f" data-i18n-html>
             <li>Catálogo web con <b>Laravel</b> (PHP)</li>
             <li>Backoffice / panel admin con <b>Vue.js</b></li>
             <li>Servicio web / API con <b>Node.js</b></li>
             <li>Datos respaldados en <b>SQL Server</b></li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Contribuidor del frontend (Vue.js) y de los servicios web (Node.js) del e-commerce, colaborando en equipo con control de versiones en Git.</div>
+          <div class="proj-role" data-i18n="c.gensweb.r" data-i18n-html><b>// mi participación</b>Contribuidor del frontend (Vue.js) y de los servicios web (Node.js) del e-commerce, colaborando en equipo con control de versiones en Git.</div>
           <div class="proj-tech"><span class="chip">Laravel</span><span class="chip">Vue.js</span><span class="chip">Node.js</span><span class="chip">JavaScript</span></div>
           <div class="proj-foot">
             <span class="proj-link" style="cursor:default" aria-label="Repositorios privados de empresa">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              Repositorios privados
+              <span data-i18n="lbl.privateRepos">Repositorios privados</span>
             </span>
           </div>
         </div>
@@ -930,24 +943,24 @@
       <article class="proj reveal" data-d="1">
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg></div>
-          <span class="proj-kind mono">Web + Móvil · Empresa E-GO</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span> media</span>
+          <span class="proj-kind mono" data-i18n="k.webMobileEgo">Web + Móvil · Empresa E-GO</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span> <span data-i18n="cx.med">media</span></span>
         </div>
         <div class="proj-body">
-          <h3>PVM — Punto de Venta Móvil <span class="tag team" style="margin-left:.3rem">Empresa · E-GO</span> <span class="tag" style="margin-left:.3rem">En producción</span></h3>
-          <p class="proj-desc">Solución de punto de venta móvil desarrollada con E-GO: una <b>plataforma web (PHP)</b> —en la que trabajo actualmente— y una <b>app Android</b> del punto de venta.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="c.pvm.t" data-i18n-html>PVM — Punto de Venta Móvil <span class="tag team" style="margin-left:.3rem">Empresa · E-GO</span> <span class="tag" style="margin-left:.3rem">En producción</span></h3>
+          <p class="proj-desc" data-i18n="c.pvm.d" data-i18n-html>Solución de punto de venta móvil desarrollada con E-GO: una <b>plataforma web (PHP)</b> —en la que trabajo actualmente— y una <b>app Android</b> del punto de venta.</p>
+          <ul class="proj-feats" data-i18n="c.pvm.f" data-i18n-html>
             <li>Web (PHP): registro de prospectos y facturación</li>
             <li>Landing y páginas informativas</li>
             <li>App Android del punto de venta (Java)</li>
             <li>Backend con base de datos</li>
           </ul>
-          <div class="proj-role"><b>// mi participación</b>Desarrollo de la plataforma web en PHP (en curso). En la app Android realicé una contribución puntual —corrección en el formato de impresión de tickets— integrada mediante pull request.</div>
+          <div class="proj-role" data-i18n="c.pvm.r" data-i18n-html><b>// mi participación</b>Desarrollo de la plataforma web en PHP (en curso). En la app Android realicé una contribución puntual —corrección en el formato de impresión de tickets— integrada mediante pull request.</div>
           <div class="proj-tech"><span class="chip">PHP</span><span class="chip">Java / Android</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span></div>
           <div class="proj-foot">
             <span class="proj-link" style="cursor:default" aria-label="Repositorio privado">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              Repositorio privado
+              <span data-i18n="lbl.privateRepo">Repositorio privado</span>
             </span>
           </div>
         </div>
@@ -957,24 +970,24 @@
       <article class="proj reveal" data-d="1">
         <div class="proj-top">
           <div class="proj-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M12 8V5M9 2h6M8 13h.01M16 13h.01M9 18v2M15 18v2"/></svg></div>
-          <span class="proj-kind mono">IoT + IA · Equipo</span>
-          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> alta</span>
+          <span class="proj-kind mono" data-i18n="k.iotAiTeam">IoT + IA · Equipo</span>
+          <span class="proj-complex mono"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span> <span data-i18n="cx.high">alta</span></span>
         </div>
         <div class="proj-body">
-          <h3>AgroBot — HackDGO 2024 <span class="tag team" style="margin-left:.3rem">Hackathon</span></h3>
-          <p class="proj-desc">Robot agrícola desarrollado en equipo durante el hackathon <b>HackDGO 2024 (CodeCaminos)</b>: sensores, cámara, nube e IA para analizar cultivos.</p>
-          <ul class="proj-feats">
+          <h3 data-i18n="c.agro.t" data-i18n-html>AgroBot — HackDGO 2024 <span class="tag team" style="margin-left:.3rem">Hackathon</span></h3>
+          <p class="proj-desc" data-i18n="c.agro.d" data-i18n-html>Robot agrícola desarrollado en equipo durante el hackathon <b>HackDGO 2024 (CodeCaminos)</b>: sensores, cámara, nube e IA para analizar cultivos.</p>
+          <ul class="proj-feats" data-i18n="c.agro.f" data-i18n-html>
             <li>Sensores con Arduino y WiFi ESP8266</li>
             <li>Almacenamiento en la nube (Firebase)</li>
             <li>Análisis de imágenes con Google Vertex AI</li>
             <li>Proyecto colaborativo multidisciplinario</li>
           </ul>
-          <div class="proj-role"><b>// trabajo en equipo</b>Colaboración bajo presión de tiempo integrando electrónica, backend y visión por computadora en un equipo multidisciplinario.</div>
+          <div class="proj-role" data-i18n="c.agro.r" data-i18n-html><b>// trabajo en equipo</b>Colaboración bajo presión de tiempo integrando electrónica, backend y visión por computadora en un equipo multidisciplinario.</div>
           <div class="proj-tech"><span class="chip">Python</span><span class="chip">C / C++</span><span class="chip">Arduino</span><span class="chip">Firebase</span><span class="chip">Vertex AI</span></div>
           <div class="proj-foot">
             <span class="proj-link" style="cursor:default" aria-label="Repositorio privado">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              Repositorio privado
+              <span data-i18n="lbl.privateRepo">Repositorio privado</span>
             </span>
           </div>
         </div>
@@ -991,18 +1004,18 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow mono">// experiencia</span>
-      <h2 id="exp-title">Experiencia &amp; formación</h2>
-      <p>Trayectoria profesional y académica real. Las fechas y empresas corresponden a mi experiencia laboral.</p>
+      <h2 id="exp-title" data-i18n="exp.title">Experiencia &amp; formación</h2>
+      <p data-i18n="exp.desc">Trayectoria profesional y académica real. Las fechas y empresas corresponden a mi experiencia laboral.</p>
     </div>
     <div class="exp-cols">
       <div class="reveal">
-        <div class="col-label mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> experiencia profesional</div>
+        <div class="col-label mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> <span data-i18n="exp.colWork">experiencia profesional</span></div>
         <div class="timeline">
           <div class="tl-item solid">
-            <div class="tl-when mono">Mayo 2026 — Actualidad</div>
-            <h3>Desarrollador de Software</h3>
+            <div class="tl-when mono" data-i18n="exp.j1.when">Mayo 2026 — Actualidad</div>
+            <h3 data-i18n="exp.j1.title">Desarrollador de Software</h3>
             <div class="tl-role mono">E-GO Desarrollo de Software · Guadalajara, Jal.</div>
-            <ul>
+            <ul data-i18n="exp.j1.items" data-i18n-html>
               <li><b>Scale II</b> (control de peso industrial, en producción): principal contribuidor de la app Android (Java) e integración con la aplicación de escritorio en <b>.NET/C#</b>, comunicación con hardware (Raspberry Pi) y <b>SQL Server</b>.</li>
               <li><b>Gens</b> (punto de venta + e-commerce): contribuidor del POS de escritorio en C#/.NET y del frontend (<b>Vue.js</b>) y servicios web (<b>Node.js</b>) de la plataforma web.</li>
               <li><b>PVM</b> (punto de venta móvil): desarrollo de la plataforma web en <b>PHP</b> y aporte a la app Android.</li>
@@ -1011,20 +1024,20 @@
             </ul>
           </div>
           <div class="tl-item solid">
-            <div class="tl-when mono">Enero 2026 — Abril 2026</div>
-            <h3>Becario de Desarrollo de Software</h3>
+            <div class="tl-when mono" data-i18n="exp.j2.when">Enero 2026 — Abril 2026</div>
+            <h3 data-i18n="exp.j2.title">Becario de Desarrollo de Software</h3>
             <div class="tl-role mono">E-GO Desarrollo de Software · Guadalajara, Jal.</div>
-            <ul>
+            <ul data-i18n="exp.j2.items" data-i18n-html>
               <li>Participé en el desarrollo del sistema de control de peso para básculas industriales.</li>
               <li>Integré la comunicación entre app de escritorio, app móvil y Raspberry Pi.</li>
               <li>Desarrollo con Python, .NET, SQL Server y Android Studio; pruebas y documentación.</li>
             </ul>
           </div>
           <div class="tl-item">
-            <div class="tl-when mono">Mayo 2024 — Agosto 2024</div>
-            <h3>Becario en Desarrollo Web</h3>
-            <div class="tl-role mono">VirtuaMX · Durango, México</div>
-            <ul>
+            <div class="tl-when mono" data-i18n="exp.j3.when">Mayo 2024 — Agosto 2024</div>
+            <h3 data-i18n="exp.j3.title">Becario en Desarrollo Web</h3>
+            <div class="tl-role mono" data-i18n="exp.j3.role">VirtuaMX · Durango, México</div>
+            <ul data-i18n="exp.j3.items" data-i18n-html>
               <li>Desarrollo de módulos frontend y backend.</li>
               <li>Desarrollo y consumo de APIs REST.</li>
               <li>Git y GitHub bajo metodologías ágiles, cumpliendo entregables en tiempo y forma.</li>
@@ -1033,17 +1046,17 @@
         </div>
       </div>
       <div class="reveal" data-d="1">
-        <div class="col-label mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg> educación</div>
+        <div class="col-label mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg> <span data-i18n="exp.colEdu">educación</span></div>
         <div class="timeline">
           <div class="tl-item solid">
             <div class="tl-when mono">2024 — 2026</div>
-            <h3>Ing. en Desarrollo y Gestión de Software</h3>
+            <h3 data-i18n="exp.e1.title">Ing. en Desarrollo y Gestión de Software</h3>
             <div class="tl-role mono">Universidad Tecnológica de Rodeo · Durango</div>
           </div>
           <div class="tl-item">
             <div class="tl-when mono">2022 — 2024</div>
-            <h3>TSU en Tecnologías de la Información</h3>
-            <div class="tl-role mono">Área Desarrollo de Software Multiplataforma</div>
+            <h3 data-i18n="exp.e2.title">TSU en Tecnologías de la Información</h3>
+            <div class="tl-role mono" data-i18n="exp.e2.role">Área Desarrollo de Software Multiplataforma</div>
             <p>Universidad Tecnológica de Rodeo · Durango</p>
           </div>
         </div>
@@ -1057,13 +1070,13 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow mono">// certificaciones</span>
-      <h2 id="cert-title">Certificaciones &amp; cursos</h2>
-      <p><b>16 certificaciones</b> verificadas en mi perfil de LinkedIn — en desarrollo, bases de datos, IA, ciberseguridad, IoT, ciencia de datos e inglés — cada una con su institución emisora.</p>
+      <h2 id="cert-title" data-i18n="cert.title">Certificaciones &amp; cursos</h2>
+      <p data-i18n="cert.desc" data-i18n-html><b>16 certificaciones</b> verificadas en mi perfil de LinkedIn — en desarrollo, bases de datos, IA, ciberseguridad, IoT, ciencia de datos e inglés — cada una con su institución emisora.</p>
     </div>
     <div class="cert-grid">
       <div class="cert reveal">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>
-        <div><div class="ctitle">SQL y Bases de Datos desde Cero</div><div class="cmeta">Udemy · 2026</div></div>
+        <div><div class="ctitle" data-i18n="cert.sql">SQL y Bases de Datos desde Cero</div><div class="cmeta">Udemy · 2026</div></div>
       </div>
       <div class="cert reveal" data-d="1">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
@@ -1075,11 +1088,11 @@
       </div>
       <div class="cert reveal">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
-        <div><div class="ctitle">Internet de las Cosas (IoT)</div><div class="cmeta">Santander Open Academy · 2025</div></div>
+        <div><div class="ctitle" data-i18n="cert.iot">Internet de las Cosas (IoT)</div><div class="cmeta">Santander Open Academy · 2025</div></div>
       </div>
       <div class="cert reveal" data-d="1">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-        <div><div class="ctitle">Seguridad digital para tu día a día</div><div class="cmeta">Santander Open Academy · 2025</div></div>
+        <div><div class="ctitle" data-i18n="cert.digsec">Seguridad digital para tu día a día</div><div class="cmeta">Santander Open Academy · 2025</div></div>
       </div>
       <div class="cert reveal" data-d="2">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span>
@@ -1087,11 +1100,11 @@
       </div>
       <div class="cert reveal">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
-        <div><div class="ctitle">Introducción a la Ciencia de Datos</div><div class="cmeta">Santander Open Academy · 2024</div></div>
+        <div><div class="ctitle" data-i18n="cert.datasci">Introducción a la Ciencia de Datos</div><div class="cmeta">Santander Open Academy · 2024</div></div>
       </div>
       <div class="cert reveal" data-d="1">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span>
-        <div><div class="ctitle">IA y Productividad (Google)</div><div class="cmeta">Santander Open Academy · 2024</div></div>
+        <div><div class="ctitle" data-i18n="cert.aiprod">IA y Productividad (Google)</div><div class="cmeta">Santander Open Academy · 2024</div></div>
       </div>
       <div class="cert reveal" data-d="2">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span>
@@ -1111,19 +1124,19 @@
       </div>
       <div class="cert reveal">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
-        <div><div class="ctitle">Liderazgo</div><div class="cmeta">Capacítate para el Empleo · 2026</div></div>
+        <div><div class="ctitle" data-i18n="cert.lead">Liderazgo</div><div class="cmeta">Capacítate para el Empleo · 2026</div></div>
       </div>
       <div class="cert reveal" data-d="1">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
-        <div><div class="ctitle">Pensamiento estratégico</div><div class="cmeta">Santander Open Academy · 2025</div></div>
+        <div><div class="ctitle" data-i18n="cert.strat">Pensamiento estratégico</div><div class="cmeta">Santander Open Academy · 2025</div></div>
       </div>
       <div class="cert reveal" data-d="2">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span>
-        <div><div class="ctitle">Marca personal 360°</div><div class="cmeta">Santander Open Academy · 2025</div></div>
+        <div><div class="ctitle" data-i18n="cert.brand">Marca personal 360°</div><div class="cmeta">Santander Open Academy · 2025</div></div>
       </div>
       <div class="cert reveal">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0zM17 7l-3 6a3 3 0 0 0 6 0z"/></svg></span>
-        <div><div class="ctitle">Derechos Humanos y Criterios ESG</div><div class="cmeta">ANUIES · 2023</div></div>
+        <div><div class="ctitle" data-i18n="cert.esg">Derechos Humanos y Criterios ESG</div><div class="cmeta">ANUIES · 2023</div></div>
       </div>
     </div>
   </div>
@@ -1135,40 +1148,40 @@
 <section id="actividad" aria-labelledby="act-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow mono">// actividad · github</span>
-      <h2 id="act-title">Actividad en GitHub</h2>
-      <p>Un vistazo a mi presencia pública en GitHub y a las tecnologías que más aparecen en mis proyectos personales.</p>
+      <span class="eyebrow mono" data-i18n="act.eyebrow">// actividad · github</span>
+      <h2 id="act-title" data-i18n="act.title">Actividad en GitHub</h2>
+      <p data-i18n="act.desc">Un vistazo a mi presencia pública en GitHub y a las tecnologías que más aparecen en mis proyectos personales.</p>
     </div>
     <div class="act-grid">
       <div class="act-card reveal">
         <div class="loc-feature">
           <div class="loc-num"><span class="pre">+</span><span class="loc-count" data-count="20000">0</span></div>
-          <div class="loc-label">líneas de código escritas por mí</div>
-          <div class="loc-sub mono">// en mis repos públicos, sin contar librerías de terceros</div>
+          <div class="loc-label" data-i18n="act.locLabel">líneas de código escritas por mí</div>
+          <div class="loc-sub mono" data-i18n="act.locSub">// en mis repos públicos, sin contar librerías de terceros</div>
         </div>
-        <h3 class="mono">// líneas de código por lenguaje</h3>
+        <h3 class="mono" data-i18n="act.byLang">// líneas de código por lenguaje</h3>
         <div class="lang-row"><span class="lang-name">PHP</span><span class="lang-track"><span class="lang-fill" data-w="100" style="background:var(--accent)"></span></span><span class="lang-val">~10.4k</span></div>
         <div class="lang-row"><span class="lang-name">HTML</span><span class="lang-track"><span class="lang-fill" data-w="76" style="background:var(--accent-soft)"></span></span><span class="lang-val">~7.9k</span></div>
         <div class="lang-row"><span class="lang-name">JavaScript</span><span class="lang-track"><span class="lang-fill" data-w="8" style="background:var(--cool)"></span></span><span class="lang-val">~810</span></div>
         <div class="lang-row"><span class="lang-name">CSS</span><span class="lang-track"><span class="lang-fill" data-w="7" style="background:var(--cool)"></span></span><span class="lang-val">~710</span></div>
         <div class="lang-row"><span class="lang-name">TypeScript</span><span class="lang-track"><span class="lang-fill" data-w="6" style="background:var(--muted)"></span></span><span class="lang-val">~590</span></div>
         <div class="lang-row"><span class="lang-name">Python</span><span class="lang-track"><span class="lang-fill" data-w="2" style="background:var(--muted)"></span></span><span class="lang-val">~210</span></div>
-        <p class="act-caption">Estimación por lenguaje de mi código en repos públicos (bytes de GitHub ÷ promedio por línea), sin contar librerías de terceros. Mi trabajo profesional con C#/.NET y SQL Server vive en repositorios privados de empresa.</p>
+        <p class="act-caption" data-i18n="act.cap1">Estimación por lenguaje de mi código en repos públicos (bytes de GitHub ÷ promedio por línea), sin contar librerías de terceros. Mi trabajo profesional con C#/.NET y SQL Server vive en repositorios privados de empresa.</p>
       </div>
       <div class="act-card reveal" data-d="1">
-        <h3 class="mono">// constancia</h3>
+        <h3 class="mono" data-i18n="act.consistency">// constancia</h3>
         <div class="heat" id="heat" aria-hidden="true"></div>
-        <div class="heat-legend"><span style="background:var(--surface-2);border:1px solid var(--border)"></span><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span> más actividad</div>
+        <div class="heat-legend"><span style="background:var(--surface-2);border:1px solid var(--border)"></span><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span> <span data-i18n="act.moreActivity">más actividad</span></div>
         <div class="act-stat-row">
-          <div class="act-stat"><div class="n">12</div><div class="t mono">// repos públicos</div></div>
-          <div class="act-stat"><div class="n">~4</div><div class="t mono">// años en GitHub</div></div>
-          <div class="act-stat"><div class="n">2025</div><div class="t mono">// año más activo</div></div>
+          <div class="act-stat"><div class="n">12</div><div class="t mono" data-i18n="act.stat.repos">// repos públicos</div></div>
+          <div class="act-stat"><div class="n">~4</div><div class="t mono" data-i18n="act.stat.years">// años en GitHub</div></div>
+          <div class="act-stat"><div class="n">2025</div><div class="t mono" data-i18n="act.stat.active">// año más activo</div></div>
         </div>
-        <p class="act-caption">Representación ilustrativa de la constancia de commits. Consulta la actividad real y en vivo en mi perfil.</p>
+        <p class="act-caption" data-i18n="act.cap2">Representación ilustrativa de la constancia de commits. Consulta la actividad real y en vivo en mi perfil.</p>
         <div class="proj-foot" style="padding-top:1.2rem">
           <a class="proj-link" href="https://github.com/Emmanuel121003" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-            Ver perfil en GitHub
+            <span data-i18n="act.viewProfile">Ver perfil en GitHub</span>
           </a>
         </div>
       </div>
@@ -1180,9 +1193,9 @@
 <section id="contacto" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="contact reveal">
-      <span class="eyebrow mono" style="justify-content:center">// contacto</span>
-      <h2 id="contact-title">Construyamos algo juntos</h2>
-      <p>Estoy abierto a oportunidades como <b>Desarrollador Junior Full Stack, Backend o Software Developer</b>, con disponibilidad inmediata. Si mi perfil encaja con lo que buscas, escríbeme.</p>
+      <span class="eyebrow mono" style="justify-content:center" data-i18n="contact.eyebrow">// contacto</span>
+      <h2 id="contact-title" data-i18n="contact.title">Construyamos algo juntos</h2>
+      <p data-i18n="contact.desc" data-i18n-html>Estoy abierto a oportunidades como <b>Desarrollador Junior Full Stack, Backend o Software Developer</b>, con disponibilidad inmediata. Si mi perfil encaja con lo que buscas, escríbeme.</p>
       <div class="contact-methods">
         <a class="cm primary" href="mailto:emmanuel.nare.12@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
@@ -1201,7 +1214,7 @@
           WhatsApp
         </a>
       </div>
-      <p class="contact-meta">📍 Guadalajara, Jalisco, México · 📞 <a href="https://wa.me/526182704889" style="color:inherit;text-decoration:underline">+52 618 270 4889</a></p>
+      <p class="contact-meta" data-i18n="contact.meta" data-i18n-html>📍 Guadalajara, Jalisco, México · 📞 <a href="https://wa.me/526182704889" style="color:inherit;text-decoration:underline">+52 618 270 4889</a></p>
     </div>
   </div>
 </section>
@@ -1210,7 +1223,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="site">
   <div class="wrap foot-inner">
-    <p>© <span id="yr">2026</span> Emmanuel Narro · Desarrollado con HTML, CSS y JS</p>
+    <p>© <span id="yr">2026</span> Emmanuel Narro · <span data-i18n="foot.built">Desarrollado con HTML, CSS y JS</span></p>
     <div class="foot-links">
       <a href="https://github.com/Emmanuel121003" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
@@ -1237,6 +1250,129 @@
     try{localStorage.setItem('theme',next);}catch(e){}
   }
   ['themeBtn','themeBtn2'].forEach(function(id){var b=document.getElementById(id);if(b)b.addEventListener('click',toggle);});
+
+  /* ---------------- i18n (ES por defecto en el DOM, EN en diccionario) ---------------- */
+  var SVGCHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+  var I18N={en:{
+    'nav.about':`about me`,'nav.stack':`stack`,'nav.projects':`projects`,'nav.collab':`collaboration`,'nav.exp':`experience`,'nav.contact':`contact`,
+    'hero.status':`<span class="dot"></span> Available · Guadalajara, Jalisco (on-site / hybrid)`,
+    'hero.h1':`I build and maintain <span class="accent">systems</span> that run in production.`,
+    'hero.role':`Jr. Software Developer · .NET/C# · Python · SQL Server<span class="cursor">.</span>`,
+    'hero.lead':`Software Development &amp; Management Engineer with professional experience building and supporting <b>enterprise systems in production</b>. I work on the backend with <b>.NET/C# and Python</b>, integrations over <b>REST APIs</b>, and <b>SQL Server</b> administration —from development to on-site deployment and incident resolution.`,
+    'hero.btnProjects':`View projects`,'hero.btnContact':`Contact me`,
+    'metric.exp':`// real experience`,'metric.prod':`// system in production`,'metric.stack':`// main stack`,'metric.degree':`SW Engineering`,
+    'about.eyebrow':`// about-me`,
+    'about.title':`A developer who takes systems from code to real-world operation.`,
+    'about.p1':`I'm a <b>Software Development &amp; Management Engineer</b> with professional experience in <strong class="hl">backend development and support of production systems</strong>. In my current job I develop and maintain an industrial weight-control system used daily on the operations floor, with <b>.NET/C#, Python and SQL Server</b>.`,
+    'about.p2':`I work <b>as part of a team</b> (Scrum methodology, Git and GitHub) across several products: I was the <b>main contributor to the Android app</b> of the scale system and also contributed to the .NET/C# core, plus collaborating on an enterprise point-of-sale (C#, Vue.js, Node.js). I've covered the full cycle: analysis, development, <b>REST APIs</b>, SQL query optimization and the part many avoid —<b>installing, deploying and keeping the system running on site</b>.`,
+    'about.p3':`On my own, my GitHub gathers <b>personal projects</b> that strengthen my full-stack foundation: a medical-records system in <b>.NET/C# and SQL Server</b>, PHP/MySQL systems (attendance, point of sale, MVC management), a Flask app and mobile development with React Native. I'm also interested in <b>information security</b> (cybersecurity fundamentals and ISO 27001). I'm looking for a <b>Junior Full Stack, Backend or Software Developer</b> role where I can contribute and keep growing.`,
+    'about.card':`// profile.json`,
+    'fact.focusK':`focus`,'fact.focusV':`Backend · Systems support`,'fact.langK':`languages`,'fact.dbK':`databases`,'fact.eduK':`education`,'fact.eduV':`BEng Software Dev. & Management`,'fact.spokenK':`spoken`,'fact.spokenV':`Spanish (native) · English B2`,'fact.locK':`location`,
+    'stack.title':`Technologies I can back up`,
+    'stack.desc':`Tools I use in my professional work and my projects, also validated on my LinkedIn profile. The ones marked <span style="color:var(--accent)">in color</span> are the ones I know best.`,
+    'stack.cat.db':`Databases`,'stack.cat.sys':`Systems · DevOps`,'stack.cat.sec':`Security · Other`,
+    'chip.uxui':`UX/UI Design`,'chip.dbdesign':`DB Design / Backups`,'chip.reports':`Excel / PDF Reports`,
+    'proj.eyebrow':`// projects · personal`,'proj.title':`My projects`,
+    'proj.desc':`Projects I've built on my own —my own authorship—, available on my GitHub. Company and team projects are in the <a href="#colaboracion" style="color:var(--accent)">Collaboration</a> section.`,
+    'lbl.code':`Code`,'lbl.privateRepo':`Private repository`,'lbl.privateRepos':`Private repositories`,'cx.high':`high`,'cx.med':`medium`,
+    'k.mobileRN':`Mobile · React Native`,'k.desktopNet':`Desktop · .NET / C#`,'k.webEcomTeam':`Web · E-commerce · Team`,'k.webMobileEgo':`Web + Mobile · E-GO Company`,'k.iotAiTeam':`IoT + AI · Team`,
+    'p.asis.t':`Attendance System`,
+    'p.asis.d':`Platform to record and manage student attendance by administrators and teachers, with exportable reports.`,
+    'p.asis.f':`<li>Attendance check-in via <b>QR code and fingerprint</b></li><li>Differentiated roles: administrator and teacher</li><li>Relational model: users, groups, subjects, schedules</li><li>Weekly report export</li>`,
+    'p.asis.r':`<b>// my role</b>Full-stack development: database schema design, role-based authentication, check-in logic and export modules.`,
+    'p.pos.t':`POS System (Point of Sale)`,
+    'p.pos.d':`Point-of-sale system to manage a store's inventory, orders and sales, with real-time operations via AJAX.`,
+    'p.pos.f':`<li>Inventory and product management</li><li>Order and sales processing</li><li>User and status administration</li><li>Asynchronous actions (AJAX) on the server</li>`,
+    'p.pos.r':`<b>// my role</b>PHP backend: sales/inventory business logic, action endpoints and project structure (actions/config/includes).`,
+    'p.mvc.t':`Management System (MVC)`,
+    'p.mvc.d':`Orders and products management app organized under the <b>Model-View-Controller</b> pattern, with a separate data layer and AJAX operations.`,
+    'p.mvc.f':`<li>Clear separation: models, views and controllers</li><li>Reusable database connection layer</li><li>CRUD for users, orders and products</li><li>Dynamic interface with AJAX requests</li>`,
+    'p.mvc.r':`<b>// my role</b>Structuring the project in MVC, data-access layer (Connection), domain models and AJAX controllers.`,
+    'p.gan.t':`Interactive Livestock System`,
+    'p.gan.d':`Web app in <b>Flask</b> to register and manage livestock: entries, exits, weights and ear tags, with report generation.`,
+    'p.gan.f':`<li>Register animal entries/exits</li><li>Track weights and ear tags (front/back)</li><li>Export reports to <b>Excel and PDF</b></li><li>Persistence with a SQLite database</li>`,
+    'p.gan.r':`<b>// my role</b>Full development in Python/Flask: routes, SQL queries, templates and report generation with openpyxl and ReportLab.`,
+    'p.qr.t':`Scanner-QR · Mobile app`,
+    'p.qr.d':`Cross-platform mobile app to scan QR codes with the camera, save history and copy results.`,
+    'p.qr.f':`<li>Camera scanning (expo-camera)</li><li>Persistent history with AsyncStorage</li><li>Navigation between screens (stack)</li><li>Build-ready configuration with EAS</li>`,
+    'p.qr.r':`<b>// my role</b>Full mobile development: screens (scanner, history, settings), navigation, local storage and build configuration.`,
+    'p.med.t':`MedicalRecords <span class="tag" style="margin-left:.3rem">Private</span>`,
+    'p.med.d':`Medical-records system built in <b>.NET/C#</b> with SQL Server, structured as a professional solution with layers, tests and documentation.`,
+    'p.med.f':`<li>Backend in C# / .NET (multi-project solution)</li><li>SQL Server database with T-SQL scripts</li><li>Automated tests and technical documentation</li><li>Automation scripts (PowerShell)</li>`,
+    'p.med.r':`<b>// my role</b>Sole author of the project: .NET solution design, SQL Server data model, tests and documentation (26 commits).`,
+    'collab.eyebrow':`// collaboration · team`,'collab.title':`Projects I've collaborated on`,
+    'collab.desc':`Team work at <b>E-GO Desarrollo de Software</b> and at a hackathon. The enterprise systems are private: they're described in general terms, without exposing code or confidential information. My participation is stated according to my actual contributions (commits).`,
+    'c.scale.t':`Scale II — Industrial Weight Control <span class="tag pro">Company · E-GO</span> <span class="tag">In production</span>`,
+    'c.scale.d':`Enterprise system for weight control on industrial scales, in daily use on the operations floor. It integrates a <b>desktop application (.NET/C#)</b>, an <b>Android mobile app</b> for field capture and <b>Raspberry Pi hardware</b>, communicating in real time and backed by SQL Server.`,
+    'c.scale.f':`<li>`+SVGCHK+`Android field-capture app in the plant (Java)</li><li>`+SVGCHK+`Desktop application / service in .NET/C#</li><li>`+SVGCHK+`Real-time communication with scale hardware</li><li>`+SVGCHK+`Sync and backup in SQL Server</li>`,
+    'c.scale.r':`<b>// my role</b><b>Main contributor to the Android app</b> (42 commits, the top contributor) and <b>contributor to the desktop/service core in .NET/C#</b> (16 commits). I work under Scrum in a team of several developers, with on-site deployment and incident resolution.`,
+    'c.genspos.t':`Gens — Point of Sale <span class="tag team">Company · E-GO</span> <span class="tag">In production</span>`,
+    'c.genspos.d':`Point-of-sale system for retailers, built as a team. The core is a desktop application in <b>C#/.NET</b> with a class library and server, backed by <b>SQL Server</b>. It's the desktop part of the Gens ecosystem (its web platform is shown separately).`,
+    'c.genspos.f':`<li>`+SVGCHK+`Point-of-sale application in C#/.NET</li><li>`+SVGCHK+`Server and class library + SQL Server</li><li>`+SVGCHK+`Sales, inventory and user management</li><li>`+SVGCHK+`Collaborative work in a team of ~8 developers</li>`,
+    'c.genspos.r':`<b>// my role</b>Contributor to the point-of-sale system in C#/.NET (44 commits), with additional contributions to the backoffice (Vue.js) and the web service (Node.js).`,
+    'c.gensweb.t':`Gens — Web platform <span class="tag team" style="margin-left:.3rem">Company · E-GO</span> <span class="tag" style="margin-left:.3rem">In production</span>`,
+    'c.gensweb.d':`Gens <b>e-commerce</b> platform: a public web catalog, an administration panel (backoffice) and a web service that feeds it, integrated with the business database.`,
+    'c.gensweb.f':`<li>Web catalog with <b>Laravel</b> (PHP)</li><li>Backoffice / admin panel with <b>Vue.js</b></li><li>Web service / API with <b>Node.js</b></li><li>Data backed by <b>SQL Server</b></li>`,
+    'c.gensweb.r':`<b>// my role</b>Contributor to the frontend (Vue.js) and the web services (Node.js) of the e-commerce, collaborating as a team with version control in Git.`,
+    'c.pvm.t':`PVM — Mobile Point of Sale <span class="tag team" style="margin-left:.3rem">Company · E-GO</span> <span class="tag" style="margin-left:.3rem">In production</span>`,
+    'c.pvm.d':`Mobile point-of-sale solution built with E-GO: a <b>web platform (PHP)</b> —which I currently work on— and an <b>Android app</b> for the point of sale.`,
+    'c.pvm.f':`<li>Web (PHP): lead registration and billing</li><li>Landing and info pages</li><li>Android point-of-sale app (Java)</li><li>Backend with database</li>`,
+    'c.pvm.r':`<b>// my role</b>Development of the web platform in PHP (ongoing). On the Android app I made a specific contribution —fixing the ticket print format— merged via pull request.`,
+    'c.agro.t':`AgroBot — HackDGO 2024 <span class="tag team" style="margin-left:.3rem">Hackathon</span>`,
+    'c.agro.d':`Agricultural robot built as a team during the <b>HackDGO 2024 (CodeCaminos)</b> hackathon: sensors, camera, cloud and AI to analyze crops.`,
+    'c.agro.f':`<li>Sensors with Arduino and ESP8266 WiFi</li><li>Cloud storage (Firebase)</li><li>Image analysis with Google Vertex AI</li><li>Multidisciplinary collaborative project</li>`,
+    'c.agro.r':`<b>// teamwork</b>Collaboration under time pressure integrating electronics, backend and computer vision in a multidisciplinary team.`,
+    'exp.title':`Experience & education`,
+    'exp.desc':`Real professional and academic background. Dates and companies correspond to my work experience.`,
+    'exp.colWork':`professional experience`,'exp.colEdu':`education`,
+    'exp.j1.when':`May 2026 — Present`,'exp.j1.title':`Software Developer`,
+    'exp.j1.items':`<li><b>Scale II</b> (industrial weight control, in production): main contributor to the Android app (Java) and integration with the desktop application in <b>.NET/C#</b>, hardware communication (Raspberry Pi) and <b>SQL Server</b>.</li><li><b>Gens</b> (point of sale + e-commerce): contributor to the desktop POS in C#/.NET and to the frontend (<b>Vue.js</b>) and web services (<b>Node.js</b>) of the web platform.</li><li><b>PVM</b> (mobile point of sale): development of the web platform in <b>PHP</b> and contribution to the Android app.</li><li>On-site deployment and incident handling; data sync and backup via <b>REST APIs</b> and SQL query optimization.</li><li>Team work with <b>Scrum, Git and GitHub</b>; technical documentation.</li>`,
+    'exp.j2.when':`January 2026 — April 2026`,'exp.j2.title':`Software Development Intern`,
+    'exp.j2.items':`<li>Took part in developing the weight-control system for industrial scales.</li><li>Integrated communication between the desktop app, mobile app and Raspberry Pi.</li><li>Development with Python, .NET, SQL Server and Android Studio; testing and documentation.</li>`,
+    'exp.j3.when':`May 2024 — August 2024`,'exp.j3.title':`Web Development Intern`,'exp.j3.role':`VirtuaMX · Durango, Mexico`,
+    'exp.j3.items':`<li>Development of frontend and backend modules.</li><li>Development and consumption of REST APIs.</li><li>Git and GitHub under agile methodologies, meeting deliverables on time.</li>`,
+    'exp.e1.title':`BEng in Software Development & Management`,
+    'exp.e2.title':`Associate Degree in Information Technology`,'exp.e2.role':`Multiplatform Software Development area`,
+    'cert.title':`Certifications & courses`,
+    'cert.desc':`<b>16 certifications</b> verified on my LinkedIn profile — in development, databases, AI, cybersecurity, IoT, data science and English — each with its issuing institution.`,
+    'cert.sql':`SQL & Databases from Scratch`,'cert.iot':`Internet of Things (IoT)`,'cert.digsec':`Digital security for everyday life`,'cert.datasci':`Introduction to Data Science`,'cert.aiprod':`AI & Productivity (Google)`,'cert.lead':`Leadership`,'cert.strat':`Strategic thinking`,'cert.brand':`Personal branding 360°`,'cert.esg':`Human Rights & ESG Criteria`,
+    'act.eyebrow':`// activity · github`,'act.title':`GitHub Activity`,
+    'act.desc':`A look at my public presence on GitHub and the technologies that appear most in my personal projects.`,
+    'act.locLabel':`lines of code written by me`,'act.locSub':`// in my public repos, excluding third-party libraries`,'act.byLang':`// lines of code by language`,
+    'act.cap1':`Per-language estimate of my code in public repos (GitHub bytes ÷ average per line), excluding third-party libraries. My professional work with C#/.NET and SQL Server lives in private company repositories.`,
+    'act.consistency':`// consistency`,'act.moreActivity':`more activity`,'act.stat.repos':`// public repos`,'act.stat.years':`// years on GitHub`,'act.stat.active':`// most active year`,
+    'act.cap2':`Illustrative representation of commit consistency. Check the real, live activity on my profile.`,'act.viewProfile':`View GitHub profile`,
+    'contact.eyebrow':`// contact`,'contact.title':`Let's build something together`,
+    'contact.desc':`I'm open to opportunities as a <b>Junior Full Stack, Backend or Software Developer</b>, available immediately. If my profile fits what you're looking for, drop me a line.`,
+    'contact.meta':`📍 Guadalajara, Jalisco, Mexico · 📞 <a href="https://wa.me/526182704889" style="color:inherit;text-decoration:underline">+52 618 270 4889</a>`,
+    'foot.built':`Built with HTML, CSS & JS`
+  }};
+  var META_EN={title:`Emmanuel Narro · Jr. Software Developer`,desc:`Portfolio of Emmanuel Narro, Software Development & Management Engineer. Jr. backend developer with real experience in .NET/C#, ASP.NET Web API, Python, SQL Server and enterprise systems in production. Guadalajara, Jalisco.`};
+  var i18nEls=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  var i18nOrig=new Map();
+  i18nEls.forEach(function(el){i18nOrig.set(el, el.hasAttribute('data-i18n-html')?el.innerHTML:el.textContent);});
+  var esTitle=document.title, esDescEl=document.querySelector('meta[name="description"]'), esDesc=esDescEl?esDescEl.getAttribute('content'):'';
+  function setLang(lang){
+    var isEn=lang==='en';
+    i18nEls.forEach(function(el){
+      var key=el.getAttribute('data-i18n'), useHtml=el.hasAttribute('data-i18n-html');
+      var val=(isEn&&I18N.en[key]!=null)?I18N.en[key]:i18nOrig.get(el);
+      if(useHtml)el.innerHTML=val; else el.textContent=val;
+    });
+    root.setAttribute('lang',isEn?'en':'es');
+    document.title=isEn?META_EN.title:esTitle;
+    if(esDescEl)esDescEl.setAttribute('content',isEn?META_EN.desc:esDesc);
+    var lc=document.getElementById('langCode'), lb=document.getElementById('langBtn');
+    if(lc)lc.textContent=isEn?'ES':'EN';
+    if(lb){lb.setAttribute('aria-label',isEn?'Cambiar a español':'Switch to English');lb.setAttribute('title',isEn?'Español':'English');}
+    var yrE=document.getElementById('yr'); if(yrE)yrE.textContent=new Date().getFullYear();
+    try{localStorage.setItem('lang',lang);}catch(e){}
+  }
+  var savedLang; try{savedLang=localStorage.getItem('lang');}catch(e){}
+  var initLang=(savedLang==='en'||savedLang==='es')?savedLang:(((navigator.language||'es').toLowerCase().indexOf('en')===0)?'en':'es');
+  setLang(initLang);
+  var langBtn=document.getElementById('langBtn');
+  if(langBtn)langBtn.addEventListener('click',function(){setLang(root.getAttribute('lang')==='en'?'es':'en');});
 
   var mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
   if(mt&&nl){
