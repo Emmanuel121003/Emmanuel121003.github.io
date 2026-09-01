@@ -56,8 +56,6 @@ python -m http.server 8000
 ```
 .
 ├── index.html               # Portafolio (single-page, autocontenido)
-├── CV_Emmanuel_Narro.tex     # CV en LaTeX (compila con pdflatex / Overleaf)
-├── CV_Emmanuel_Narro.pdf     # CV compilado
 └── README.md
 ```
 
