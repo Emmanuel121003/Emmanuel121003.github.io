@@ -1,0 +1,152 @@
+%==================================================================
+%  CV - Emmanuel Narro  |  Desarrollador de Software Jr.
+%  Compilar con: pdflatex CV_Emmanuel_Narro.tex   (o en Overleaf)
+%  Basado en el portafolio: github.com/Emmanuel121003
+%==================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---- Paleta (cobre / tinta, a juego con el portafolio) ----
+\definecolor{accent}{HTML}{A85A22}
+\definecolor{ink}{HTML}{1A2130}
+\definecolor{muted}{HTML}{5A6472}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% ---- Formato de secciones ----
+\titleformat{\section}
+  {\color{accent}\bfseries\large\scshape}
+  {}{0pt}{}[{\color{accent!40}\titlerule[1pt]}]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=2pt, parsep=0pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ---- Comando para entradas de experiencia ----
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill {\color{muted}#2}\\[1pt]
+  {\color{accent}\itshape #3} \hfill {\color{muted}\itshape #4}\\[2pt]
+}
+
+\begin{document}
+
+%==================== ENCABEZADO ====================
+\begin{center}
+  {\color{ink}\Huge\bfseries Emmanuel Narro}\\[4pt]
+  {\large\color{accent} Desarrollador de Software Jr. \textbar{} Backend \& Full Stack}\\[6pt]
+  {\color{muted}\small
+   Guadalajara, Jalisco, México \enspace\textbullet\enspace
+   \href{https://wa.me/526182704889}{+52 618 270 4889 (WhatsApp)} \enspace\textbullet\enspace
+   \href{mailto:emmanuel.nare.12@gmail.com}{emmanuel.nare.12@gmail.com}\\[3pt]
+   \href{https://www.linkedin.com/in/emmanuel-narro-8b4476170}{linkedin.com/in/emmanuel-narro-8b4476170}
+   \enspace\textbullet\enspace
+   \href{https://github.com/Emmanuel121003}{github.com/Emmanuel121003}}
+\end{center}
+
+%==================== PERFIL ====================
+\section{Perfil profesional}
+Ingeniero en Desarrollo y Gestión de Software enfocado en \textbf{backend y desarrollo web full stack}, con
+experiencia profesional construyendo y dando soporte a \textbf{sistemas empresariales en producción}. Trabajo con
+\textbf{.NET/C\#, ASP.NET Web API, Python y SQL Server}, integraciones mediante \textbf{APIs REST} y desarrollo
+multiplataforma (web, móvil e IoT). He cubierto el ciclo completo: modelo de datos, lógica de negocio, despliegue en
+sitio y resolución de incidencias. Busco un rol Junior de Full Stack, Backend o Software Developer.
+
+%==================== EXPERIENCIA ====================
+\section{Experiencia profesional}
+
+\entry{E-GO Desarrollo de Software}{Guadalajara, Jal.}{Desarrollador de Software}{Mayo 2026 -- Actualidad}
+\begin{itemize}
+  \item \textbf{Scale II} (control de peso industrial, en producción): principal contribuidor de la app Android (Java)
+        e integración con la aplicación de escritorio en .NET/C\#, comunicación con hardware (Raspberry Pi) y SQL Server.
+  \item \textbf{Gens} (punto de venta y e-commerce): contribuidor del POS de escritorio en C\#/.NET y del frontend
+        (Vue.js) y servicios web (Node.js) de la plataforma web.
+  \item \textbf{PVM} (punto de venta móvil): desarrollo de la plataforma web en PHP y aporte a la app Android.
+  \item Despliegue en sitio y atención de incidencias; sincronización y respaldo de datos vía APIs REST y
+        optimización de consultas SQL.
+  \item Trabajo en equipo con Scrum, Git y GitHub; documentación técnica.
+\end{itemize}
+
+\entry{E-GO Desarrollo de Software}{Guadalajara, Jal.}{Becario de Desarrollo de Software}{Enero 2026 -- Abril 2026}
+\begin{itemize}
+  \item Participé en el desarrollo del sistema de control de peso para básculas industriales.
+  \item Integré la comunicación entre app de escritorio, app móvil y Raspberry Pi.
+  \item Desarrollo con Python, .NET, SQL Server y Android Studio; pruebas y documentación.
+\end{itemize}
+
+\entry{VirtuaMX}{Durango, México}{Becario en Desarrollo Web}{Mayo 2024 -- Agosto 2024}
+\begin{itemize}
+  \item Desarrollo de módulos frontend y backend; desarrollo y consumo de APIs REST.
+  \item Git y GitHub bajo metodologías ágiles, cumpliendo entregables en tiempo y forma.
+\end{itemize}
+
+%==================== PROYECTOS ====================
+\section{Proyectos destacados}
+\begin{itemize}
+  \item \textbf{MedicalRecords} (propio): sistema de expedientes médicos en \textbf{C\#/.NET} con SQL Server, con
+        pruebas y documentación. Autor único.
+  \item \textbf{Sistema de Asistencia} (PHP, MySQL): control de asistencia con roles, registro por QR y huella,
+        esquema relacional y reportes exportables.
+  \item \textbf{Sistema Ganadero Interactivo} (Python, Flask, SQLite): registro de ganado con exportación a Excel y PDF.
+  \item \textbf{Scanner-QR} (React Native, Expo): app móvil de escaneo de QR con cámara, historial y almacenamiento local.
+  \item \textbf{AgroBot -- HackDGO 2024} (equipo): robot agrícola con Arduino/ESP8266, Firebase y Google Vertex AI
+        para análisis de imágenes de cultivos.
+\end{itemize}
+
+%==================== EDUCACIÓN ====================
+\section{Educación}
+\entry{Ingeniería en Desarrollo y Gestión de Software}{Durango}{Universidad Tecnológica de Rodeo}{2024 -- 2026}
+\vspace{2pt}
+\entry{TSU en Tecnologías de la Información -- Desarrollo de Software Multiplataforma}{Durango}{Universidad Tecnológica de Rodeo}{2022 -- 2024}
+
+%==================== HABILIDADES ====================
+\section{Habilidades técnicas}
+\begin{itemize}
+  \item \textbf{Backend:} C\#/.NET, ASP.NET Web API, Python, PHP, Java, Node.js/Express, Laravel, Flask, APIs REST, MVC.
+  \item \textbf{Frontend:} JavaScript, TypeScript, Vue.js, React, HTML5, CSS3, Tailwind.
+  \item \textbf{Bases de datos:} SQL Server, MySQL, PostgreSQL, MongoDB, SQLite; diseño relacional, respaldos y sincronización.
+  \item \textbf{Móvil:} Java/Android, React Native, Expo, Android Studio.
+  \item \textbf{Sistemas y herramientas:} Git, GitHub, Linux/Raspberry Pi, Windows Server, Postman, Scrum/Kanban.
+  \item \textbf{Otros:} Ciberseguridad (fundamentos), ISO 27001, IoT (Arduino/ESP8266), Google Vertex AI.
+\end{itemize}
+
+%==================== CERTIFICACIONES ====================
+\section{Certificaciones}
+{\small
+\begin{itemize}
+  \item SQL y Bases de Datos desde Cero --- Udemy (2026)
+  \item Artificial Intelligence Fundamentals --- IBM (2026)
+  \item Cybersecurity Fundamentals --- IBM (2025)
+  \item Internet de las Cosas (IoT) --- Santander Open Academy (2025)
+  \item Seguridad digital para tu día a día --- Santander Open Academy (2025)
+  \item Microsoft Copilot --- Santander Open Academy (2025)
+  \item Introducción a la Ciencia de Datos --- Santander Open Academy (2024)
+  \item IA y Productividad (Google) --- Santander Open Academy (2024)
+  \item Python Essentials 1 y 2 --- Cisco (2023)
+  \item EF SET English --- B2 (59/100), EF SET (2025)
+  \item Liderazgo --- Capacítate para el Empleo (2026) \quad\textbullet\quad Pensamiento estratégico --- Santander Open Academy (2025)
+  \item Marca personal 360\textdegree{} --- Santander Open Academy (2025) \quad\textbullet\quad Derechos Humanos y Criterios ESG --- ANUIES (2023)
+\end{itemize}}
+
+%==================== IDIOMAS ====================
+\section{Idiomas}
+Español (nativo) \quad\textbullet\quad Inglés --- B2 (Intermedio alto)
+
+\end{document}
+
+%==================================================================
+% NOTA:
+% - Compila directo con pdflatex u Overleaf (sin paquetes especiales).
+% - Paleta cobre/tinta a juego con el portafolio.
+%==================================================================
