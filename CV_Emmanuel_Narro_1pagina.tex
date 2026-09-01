@@ -1,0 +1,132 @@
+%==================================================================
+%  CV - Emmanuel Narro  |  Desarrollador de Software Jr.  (1 PAGINA)
+%  Version compacta: sans-serif, acento cobre, niveles, objetivo.
+%  Compilar con: pdflatex CV_Emmanuel_Narro_1pagina.tex  (o Overleaf)
+%==================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[top=1cm,bottom=1cm,left=1.25cm,right=1.25cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+
+\definecolor{accent}{HTML}{A85A22}   % cobre elegante
+\definecolor{ink}{HTML}{1A2130}
+\definecolor{muted}{HTML}{5A6472}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\titleformat{\section}
+  {\color{accent}\bfseries\normalsize}
+  {}{0pt}{}[{\color{accent!35}\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{5pt}{2pt}
+
+\setlist[itemize]{leftmargin=1.1em, itemsep=0.5pt, topsep=1pt, parsep=0pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{0.98}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill {\color{muted}\small #2}\\[0pt]
+  {\color{accent}\small #3} \hfill {\color{muted}\itshape\small #4}\\[1pt]
+}
+
+\begin{document}
+
+%==================== ENCABEZADO ====================
+\begin{center}
+  {\color{ink}\LARGE\bfseries Emmanuel Narro}\\[2pt]
+  {\color{accent} Desarrollador de Software Jr. \textbar{} Backend \& Full Stack}\\[3pt]
+  {\color{muted}\small
+   Guadalajara, Jalisco, México \enspace\textbullet\enspace
+   \href{https://wa.me/526182704889}{+52 618 270 4889 (WhatsApp)} \enspace\textbullet\enspace
+   \href{mailto:emmanuel.nare.12@gmail.com}{emmanuel.nare.12@gmail.com}\\[1pt]
+   \href{https://www.linkedin.com/in/emmanuel-narro-8b4476170}{linkedin.com/in/emmanuel-narro-8b4476170}
+   \enspace\textbullet\enspace
+   \href{https://github.com/Emmanuel121003}{github.com/Emmanuel121003}
+   \enspace\textbullet\enspace
+   {\color{accent}\textbf{Portafolio:}}~\href{https://emmanuel121003.github.io/}{emmanuel121003.github.io}}
+\end{center}
+
+%==================== PERFIL ====================
+\section{Perfil profesional}
+Ingeniero en Desarrollo y Gestión de Software con experiencia profesional construyendo y dando soporte a \textbf{sistemas
+empresariales en producción} (\textbf{.NET/C\#, Python, SQL Server, APIs REST}). \textbf{Busco integrarme como Desarrollador
+Junior Full Stack o Backend}, para aportar en proyectos reales y seguir creciendo en desarrollo backend e integración de sistemas.
+
+%==================== EXPERIENCIA ====================
+\section{Experiencia profesional}
+
+\entry{E-GO Desarrollo de Software}{Guadalajara, Jal.}{Desarrollador de Software}{Mayo 2026 -- Actualidad}
+\begin{itemize}
+  \item \textbf{Scale II} (control de peso industrial, en producción y uso diario en planta): principal contribuidor de la app Android (Java); integración con escritorio .NET/C\#, Raspberry Pi y SQL Server.
+  \item \textbf{Gens} (POS + e-commerce): contribuidor del POS en C\#/.NET y del frontend (Vue.js) y servicios web (Node.js).
+  \item \textbf{PVM} (punto de venta móvil): plataforma web en PHP y aporte a la app Android.
+  \item Disponibilidad y confiabilidad del sistema: despliegue en sitio, incidencias, sync/respaldo por APIs REST y optimización SQL; Scrum, Git y GitHub.
+\end{itemize}
+
+\entry{E-GO Desarrollo de Software}{Guadalajara, Jal.}{Becario de Desarrollo de Software}{Enero -- Abril 2026}
+\begin{itemize}
+  \item Desarrollo del sistema de control de peso e integración entre escritorio, móvil y Raspberry Pi (Python, .NET, SQL Server, Android Studio); pruebas y documentación.
+\end{itemize}
+
+\entry{VirtuaMX}{Durango, México}{Becario en Desarrollo Web}{Mayo -- Agosto 2024}
+\begin{itemize}
+  \item Módulos frontend y backend y APIs REST bajo metodologías ágiles, entregando en tiempo y forma.
+\end{itemize}
+
+%==================== PROYECTOS ====================
+\section{Proyectos destacados}
+\begin{itemize}
+  \item \textbf{MedicalRecords} (propio): expedientes médicos en C\#/.NET con SQL Server, pruebas y documentación.
+  \item \textbf{Sistema de Asistencia} (PHP/MySQL): roles, registro por QR y huella, modelo relacional y reportes.
+  \item \textbf{Sistema Ganadero} (Python/Flask/SQLite): registro de ganado con exportación a Excel y PDF.
+  \item \textbf{Scanner-QR} (React Native/Expo) y \textbf{AgroBot} (IoT + IA en equipo: Arduino, Firebase, Vertex AI).
+\end{itemize}
+
+%==================== EDUCACIÓN ====================
+\section{Educación}
+\textbf{Ing. en Desarrollo y Gestión de Software} --- UT de Rodeo \hfill {\color{muted}\small 2024 -- 2026}\\[1pt]
+\textbf{TSU en Tecnologías de la Información} (Desarrollo de SW Multiplataforma) --- UT de Rodeo \hfill {\color{muted}\small 2022 -- 2024}
+
+%==================== HABILIDADES ====================
+\section{Habilidades técnicas} \textit{\small (A = avanzado, I = intermedio, B = básico)}
+\begin{itemize}
+  \item \textbf{Backend:} C\#/.NET, PHP, Java \textit{(A)}; Python, ASP.NET Web API, Node.js, APIs REST, Flask \textit{(I)}; Laravel, MVC \textit{(B)}.
+  \item \textbf{Frontend:} JavaScript, HTML5, CSS3, Vue.js, TypeScript \textit{(I)}; React, Tailwind \textit{(B)}.
+  \item \textbf{Bases de datos:} SQL Server, MySQL \textit{(A)}; SQLite \textit{(I)}; PostgreSQL, MongoDB \textit{(B)}.
+  \item \textbf{Móvil / Sistemas:} Java/Android \textit{(A)}; React Native, Expo, Git, GitHub, Postman, Scrum \textit{(I)}; Linux/Raspberry Pi \textit{(B)}.
+  \item \textbf{Otros:} Ciberseguridad, ISO 27001, IoT (Arduino/ESP8266), Google Vertex AI \textit{(B)}.
+\end{itemize}
+
+%==================== CERTIFICACIONES ====================
+\section{Certificaciones}
+{\small
+\begin{multicols}{2}
+\begin{itemize}
+  \item Artificial Intelligence Fundamentals --- IBM
+  \item Cybersecurity Fundamentals --- IBM
+  \item Python Essentials 1 y 2 --- Cisco
+  \item SQL y Bases de Datos desde Cero --- Udemy
+  \item Introducción a la Ciencia de Datos --- Santander
+  \item Internet de las Cosas (IoT) --- Santander
+  \item Seguridad digital --- Santander
+  \item Microsoft Copilot / IA y Productividad --- Santander
+  \item EF SET English --- Nivel B2 (59/100)
+\end{itemize}
+\end{multicols}}
+
+%==================== IDIOMAS ====================
+\section{Idiomas}
+\textbf{Español:} nativo. \qquad \textbf{Inglés:} B2 (Intermedio alto), respaldado por EF SET; en desarrollo continuo.
+
+\end{document}
