@@ -17,11 +17,11 @@ Todo el contenido está en un único archivo `index.html` autocontenido.
 
 - **Hero** — presentación, perfil y llamadas a la acción.
 - **Sobre mí** — perfil profesional.
-- **Stack tecnológico** — tecnologías por categoría (Backend, Frontend, Bases de datos, Mobile, Sistemas, Seguridad).
+- **Stack tecnológico** — tecnologías por categoría (Backend, Frontend, Bases de datos, Datos · Analítica, Mobile, Sistemas, Seguridad).
 - **Proyectos** — proyectos propios (MedicalRecords, Sistema de Asistencia, Ganadero, Scanner-QR, etc.).
 - **Colaboración en equipo** — trabajo profesional en E-GO (Scale II, Gens, PVM) y hackathon (AgroBot).
 - **Experiencia y formación** — trayectoria laboral y académica.
-- **Certificaciones** — 16 certificaciones (IBM, Cisco, Santander Open Academy, EF SET, etc.).
+- **Certificaciones** — 18 certificaciones (Google y Microsoft vía Coursera, IBM, Cisco, Santander Open Academy, EF SET, etc.).
 - **Actividad en GitHub** y **Contacto** (email, WhatsApp, LinkedIn, GitHub).
 
 ---

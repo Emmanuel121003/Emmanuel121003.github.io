@@ -12,3 +12,6 @@
 Thumbs.db
 .vscode/
 *.tmp
+
+# Certificados personales (PDFs con datos privados: correo, QR, enlaces de verificación)
+Certificados/
