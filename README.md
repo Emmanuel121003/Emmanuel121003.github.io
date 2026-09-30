@@ -21,7 +21,7 @@ Todo el contenido está en un único archivo `index.html` autocontenido.
 - **Proyectos** — proyectos propios (MedicalRecords, Sistema de Asistencia, Ganadero, Scanner-QR, etc.).
 - **Colaboración en equipo** — trabajo profesional en E-GO (Scale II, Gens, PVM) y hackathon (AgroBot).
 - **Experiencia y formación** — trayectoria laboral y académica.
-- **Certificaciones** — 18 certificaciones (Google y Microsoft vía Coursera, IBM, Cisco, Santander Open Academy, EF SET, etc.).
+- **Certificaciones** — 20 certificaciones (Google, Microsoft, IBM y SAS vía Coursera, Cisco, Santander Open Academy, EF SET, etc.).
 - **Actividad en GitHub** y **Contacto** (email, WhatsApp, LinkedIn, GitHub).
 
 ---
@@ -56,7 +56,21 @@ python -m http.server 8000
 ```
 .
 ├── index.html               # Portafolio (single-page, autocontenido)
+├── og-image.png             # Imagen para Open Graph / Twitter Card
+├── CVs/                     # CV en LaTeX (ES/EN) + PDFs compilados
+│   ├── CV_Emmanuel_Narro.tex        # versión completa (ES)
+│   ├── CV_Emmanuel_Narro_EN.tex     # versión completa (EN)
+│   ├── CV_Emmanuel_Narro_1pagina.tex    # versión de 1 página (ES)
+│   ├── CV_Emmanuel_Narro_EN_1page.tex   # versión de 1 página (EN)
+│   └── 1pagina/                     # PDFs de las versiones de 1 página
+├── LinkedIn/                # Borradores de publicaciones (ES/EN) por certificación
 └── README.md
+```
+
+Los PDFs de los CVs se regeneran con `pdflatex` (dos pasadas) desde la carpeta `CVs/`:
+
+```bash
+cd CVs && pdflatex CV_Emmanuel_Narro.tex && pdflatex CV_Emmanuel_Narro.tex
 ```
 
 ---
